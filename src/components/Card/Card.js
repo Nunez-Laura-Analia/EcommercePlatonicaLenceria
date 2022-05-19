@@ -3,37 +3,38 @@ import { useState } from 'react'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Modal from "../Modal/Modal";
+import ItemCount from "../ItemCount/ItemCount";
 
 const CardItem = () => {
   const [open, setOpen] = useState(false);
-  const[count, setCount] = useState(0)
 
   const handClose = () => {
     setOpen(false);
   };
 
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card className="card-container" sx={{ minWidth: 275 }}>
       <CardContent>
         <div className="card">
           <div>
-            <img src="./colaless-glitter.jpeg" />
+            <img className="img-productos" src="./colaless-glitter.jpeg" />
           </div>
           <p>TITULO</p>
           <span>$1000</span>
-          <div className="contador">
-              <button onClick={() => setCount(count - 1)} disabled={count==0}>-</button>
-              <p>{count}</p>
-              <button onClick={() => setCount(count + 1)}>+</button>
-          </div>
+          <ItemCount />
           <div>
-            <button onClick={() => setOpen(true)}> Ver mas</button>
-            <button > Agregar al Carrito</button>
+            <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
+            <button className="boton" > Agregar al Carrito</button>
           </div>
         </div>
       </CardContent>
       <Modal handClose={handClose} open={open}>
-        <img src="./colaless-glitter.jpeg" />
+        <img className="img-productos" src="./colaless-glitter.jpeg" />
+        <div>
+          <p>NOMBRE DEL PRODUCTO</p>
+          <p>CARACTERISTICAS DEL PRODUCTO</p>
+          <p>OPCION DE COLORES Y TALLES</p>
+        </div>
       </Modal>
     </Card>
   );

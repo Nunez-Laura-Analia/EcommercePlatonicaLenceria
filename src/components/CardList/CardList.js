@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 
 const CardList = () => {
   return (
-    <Grid container>
+    <Grid className="carta" container>
       <Grid item md={3}>
         <CardItem />
       </Grid>
