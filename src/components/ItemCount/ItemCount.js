@@ -13,6 +13,7 @@ const ItemCount = () => {
     }
 
     const addCount = () =>{
+        if (count < stock)
         setCount(count + 1)
         
     }
@@ -26,7 +27,7 @@ const ItemCount = () => {
             </div>
             <button className="boton" onClick={() =>setOpen(true)}>Comprar</button>
             <Modal handClose={handClose} open={open}>
-                <h1>Compraste __ productos</h1>
+                <h1>Compraste {count} productos</h1>
             </Modal>
         </div>    
     )
