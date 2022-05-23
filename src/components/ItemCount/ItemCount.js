@@ -2,10 +2,9 @@ import { useState } from "react"
 import './ItemCount.css'
 import Modal from "../Modal/Modal";
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
 
-    const[count, setCount] = useState(0)
-    const [stock, setStock] = useState(10)
+    const[count, setCount] = useState(5)
 
     const [open, setOpen] = useState(false)
     const handClose = () => {
@@ -18,10 +17,14 @@ const ItemCount = () => {
         
     }
 
+    const restCount= () => {
+        restCount (count - 1)
+    }
+
     return(
         <div className="container-contador">
             <div className="contador">
-                <button className="boton" onClick={() => setCount(count - 1)} disabled={count==0}>-</button>
+                <button className="boton" onClick={restCount} disabled={count==0}>-</button>
                 <p>{count}</p>
                 <button className="boton" onClick={addCount}>+</button>
             </div>

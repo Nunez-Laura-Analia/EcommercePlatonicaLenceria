@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Modal from "../Modal/Modal";
 import ItemCount from "../ItemCount/ItemCount";
 
-const Item = ({image, title, price, stock}) => {
+const Item = ({image, title, price,stock}) => {
   const [open, setOpen] = useState(false);
 
   const handClose = () => {
@@ -21,7 +21,7 @@ const Item = ({image, title, price, stock}) => {
           </div>
           <p>{title}</p>
           <span>${price}</span>
-          <ItemCount />
+          <ItemCount stock= {stock}/>
           <div>
             <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
             <button className="boton" > Agregar al Carrito</button>

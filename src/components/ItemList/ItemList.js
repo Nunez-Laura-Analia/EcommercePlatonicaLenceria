@@ -12,7 +12,7 @@ const ItemList = () => {
         price : 1000,
         image : './colaless-glitter.jpeg',
         description: 'descripcion',
-        stock: 12,
+        stock: 9,
         id: 1
       },
       {
@@ -20,7 +20,7 @@ const ItemList = () => {
         price : 1500,
         image : './colaless-glitter-regulables.jpeg',
         description: 'descripcion',
-        stock: 24,
+        stock: 6,
         id: 2
   
       },
@@ -29,7 +29,7 @@ const ItemList = () => {
         price : 1200,
         image : './vedetinas.jpeg',
         description: 'descripcion',
-        stock: 12,
+        stock: 7,
         id: 3
       },
       {
@@ -37,7 +37,7 @@ const ItemList = () => {
         price : 900,
         image : './vedetinas2.jpeg',
         description: 'descripcion',
-        stock: 24,
+        stock: 8,
         id: 4
       },
     ]
