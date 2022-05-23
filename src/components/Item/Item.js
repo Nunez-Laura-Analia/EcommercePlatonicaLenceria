@@ -1,11 +1,11 @@
-import "./Card.css";
+import "./Item.css";
 import { useState } from 'react'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Modal from "../Modal/Modal";
 import ItemCount from "../ItemCount/ItemCount";
 
-const CardItem = () => {
+const Item = ({image, title, price, stock}) => {
   const [open, setOpen] = useState(false);
 
   const handClose = () => {
@@ -17,10 +17,10 @@ const CardItem = () => {
       <CardContent>
         <div className="card">
           <div>
-            <img className="img-productos" src="./colaless-glitter.jpeg" />
+            <img className="img-productos" src={`./${image}`} />
           </div>
-          <p>TITULO</p>
-          <span>$1000</span>
+          <p>{title}</p>
+          <span>${price}</span>
           <ItemCount />
           <div>
             <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
@@ -40,4 +40,4 @@ const CardItem = () => {
   );
 };
 
-export default CardItem;
+export default Item;
