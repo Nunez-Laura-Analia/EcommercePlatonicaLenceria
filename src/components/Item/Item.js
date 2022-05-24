@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Modal from "../Modal/Modal";
 import ItemCount from "../ItemCount/ItemCount";
 
-const Item = ({image, title, price,stock}) => {
+const Item = ({image, title, price,stock, initial}) => {
   const [open, setOpen] = useState(false);
 
   const handClose = () => {
@@ -19,9 +19,9 @@ const Item = ({image, title, price,stock}) => {
           <div>
             <img className="img-productos" src={`./${image}`} />
           </div>
-          <p>{title}</p>
+          <h3>{title}</h3>
           <span>${price}</span>
-          <ItemCount stock= {stock}/>
+          <ItemCount stock= {stock} initial={initial}/>
           <div>
             <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
             <button className="boton" > Agregar al Carrito</button>
@@ -29,7 +29,7 @@ const Item = ({image, title, price,stock}) => {
         </div>
       </CardContent>
       <Modal handClose={handClose} open={open}>
-        <img className="img-productos" src="./colaless-glitter.jpeg" />
+        <img className="img-productos" src={`./${image}`} />
         <div>
           <p>NOMBRE DEL PRODUCTO</p>
           <p>CARACTERISTICAS DEL PRODUCTO</p>

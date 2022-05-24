@@ -13,6 +13,7 @@ const ItemList = () => {
         image : './colaless-glitter.jpeg',
         description: 'descripcion',
         stock: 9,
+        initial:5,
         id: 1
       },
       {
@@ -21,6 +22,7 @@ const ItemList = () => {
         image : './colaless-glitter-regulables.jpeg',
         description: 'descripcion',
         stock: 6,
+        initial:2,
         id: 2
   
       },
@@ -30,6 +32,7 @@ const ItemList = () => {
         image : './vedetinas.jpeg',
         description: 'descripcion',
         stock: 7,
+        initial:1,
         id: 3
       },
       {
@@ -38,18 +41,21 @@ const ItemList = () => {
         image : './vedetinas2.jpeg',
         description: 'descripcion',
         stock: 8,
+        initial:3,
         id: 4
       },
     ]
   
     const getProducts = () => {
       return new Promise ((resolve, reject) => {
+        setTimeout(() => {
           resolve(productos)
+        },2000)
       })
     }
   
     useEffect( () => {
-        setLoader(true)
+      setLoader(true)  
       getProducts()
       .then( (res) => {
         setProducts(res)

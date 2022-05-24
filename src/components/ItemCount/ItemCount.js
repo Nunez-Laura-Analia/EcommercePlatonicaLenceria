@@ -2,23 +2,24 @@ import { useState } from "react"
 import './ItemCount.css'
 import Modal from "../Modal/Modal";
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, initial}) => {
 
-    const[count, setCount] = useState(5)
+    const[count, setCount] = useState(initial)
 
     const [open, setOpen] = useState(false)
     const handClose = () => {
       setOpen(false)
     }
 
+    const restCount= () => {
+        if (count > initial)
+        setCount (count - 1)
+    }
+
     const addCount = () =>{
         if (count < stock)
         setCount(count + 1)
         
-    }
-
-    const restCount= () => {
-        restCount (count - 1)
     }
 
     return(
