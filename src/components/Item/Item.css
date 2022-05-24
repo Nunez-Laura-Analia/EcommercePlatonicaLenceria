@@ -19,7 +19,6 @@
     font-weight: 600;
 }
 
-.boton{
-    text-decoration: none;
-    
+.botones{
+    display: flex;
 }

@@ -50,7 +50,7 @@ const ItemList = () => {
       return new Promise ((resolve, reject) => {
         setTimeout(() => {
           resolve(productos)
-        },2000)
+        }, 2000)
       })
     }
   
@@ -58,6 +58,7 @@ const ItemList = () => {
       setLoader(true)  
       getProducts()
       .then( (res) => {
+        console.log("then", res)
         setProducts(res)
       })
       .catch ( (err) => {

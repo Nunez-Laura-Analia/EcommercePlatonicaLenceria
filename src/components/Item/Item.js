@@ -21,10 +21,9 @@ const Item = ({image, title, price,stock, initial}) => {
           </div>
           <h3>{title}</h3>
           <span>${price}</span>
-          <ItemCount stock= {stock} initial={initial}/>
           <div>
+            <ItemCount stock= {stock} initial={initial}/>
             <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
-            <button className="boton" > Agregar al Carrito</button>
           </div>
         </div>
       </CardContent>
