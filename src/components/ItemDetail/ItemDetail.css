@@ -3,13 +3,14 @@
 }
 
 .imgContainer{
-    width: 60%;
+    width: 55%;
 }
 
 .imgDetail{
     width: 95%;
-    height: 95%;
+    height: 80%;
     border-radius: 10px;
+    margin-left: 15px;
 }
 
 .infoDetail{
@@ -21,42 +22,59 @@
 
 .selectorContainer{
     display: flex;
+    margin-bottom: 50px;
 }
 
 h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-bottom: 20px;
 }
 
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.talle{
+    margin-top: 20px;
+}
+.colores{
+    margin-top: 20px;
+
+}
 .selector{
-    margin-top: 20px;
     margin-right: 20px;
-    margin-bottom: 40px;
-    width: 110px;
-    border-radius: 5px;
+    width: 120px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-.detailDescription{
-    margin-top: 20px;
-}
-
 
 .selectorAdd {
     border: none;
     width: 200px;
     height: 45px;
-    background-color: rgb(235, 159, 235);
-    border-radius: 5px;
+    background-color: rgb(241, 50, 241);
     transition: all 0.3s ease;
 }
 
-
 .selectorAdd:hover {
-    background: rgb(235, 138, 235);
+    background: rgb(248, 129, 248);
+    border: 1px solid rgb(214, 121, 214);
+    
 }
 
-.color-group-selector {margin-bottom: 15px;display: flex;}
+.talleSelector{
+    background: black;
+    color: white;
+    border-radius: 50%;
+}
 
-.color-selector {width: 20px;height: 20px;margin-right: 10px;cursor: pointer;border: none;border-radius: 50%;}
+.color-group-selector {display: flex;margin-bottom: 30px;}
+
+.color-selector {width: 30px;height: 30px;margin-right: 10px;cursor: pointer;border: none;border-radius: 50%;}
 
 .black {background: black;}
 
@@ -69,3 +87,16 @@ h2{
 .blue {background: rgb(6, 6, 90);}
 
 .grey {background: rgb(173, 172, 172);}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+}
+
+.redesLogo{
+    margin-right: 10px;
+}
+
+.info{
+    margin-top: 250px;
+}

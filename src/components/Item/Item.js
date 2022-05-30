@@ -8,6 +8,10 @@ import ItemCount from "../ItemCount/ItemCount";
 const Item = ({image, title, price,stock, initial}) => {
   const [open, setOpen] = useState(false);
 
+  function onAdd (count) {
+    console.log ("Agregaste " + count + " productos al carrito")
+  }
+
   const handClose = () => {
     setOpen(false);
   };
@@ -22,7 +26,7 @@ const Item = ({image, title, price,stock, initial}) => {
           <h3>{title}</h3>
           <span>${price}</span>
           <div>
-            <ItemCount stock= {stock} initial={initial}/>
+            <ItemCount stock= {stock} initial={initial} onAdd={onAdd}/>
             <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
           </div>
         </div>
