@@ -7,31 +7,22 @@ const Producto = () => {
     const [products , setProducts] = useState ([])
     const { category } = useParams()
 
-    useEffect ( () => {
-        setProducts([])
-        console.log("category", category)
-        getProducts()
-        .then ((res) => {
-            filterByCategory(res)
-        })
-    }, [category])    
-
     const getProducts = () => {
         return new Promise((resolve, reject) => {
             resolve(productos);
         });
     };    
-    
-    const filterByCategory = (array) => {
-        return array.map ((item) => {
-            if (item.category == category) {
-                return setProducts(products => [...products, item])
-            } 
+
+    useEffect ( () => {
+        getProducts()
+        .then ((res) => {
+            setProducts( category ? res.filter(product => product.category === category)  : res)
         })
-    }
+    }, [category])    
+    
     return(
         <div>
-            <ItemList title={"Productos Recomendados"} products={products}/>
+            <ItemList products={products}/>
         </div>
     )
 }

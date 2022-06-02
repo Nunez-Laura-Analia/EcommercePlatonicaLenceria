@@ -31,8 +31,7 @@ const ItemDetail = ({ data }) => {
             <button className="color-selector pink"></button>
             <button className="color-selector blue"></button>
             <button className="color-selector grey"></button>
-          </div>
-          {/* <p className="detailColors">{data.colores}</p> */}          
+          </div>      
           <div className="selectorContainer">
             <select className="selector">
               <option>Cantidad</option>

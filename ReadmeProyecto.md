@@ -1,0 +1,2 @@
+El proyecto en el que decidí trabajar es un ecommerce para la marca "Platónica Lencería", la cual se dedica a la venta mayorista de ropa interior femenina. 
+Para la página elegí abordar un enfoque simple, intuitivo, funcional y agradable esteticamente.

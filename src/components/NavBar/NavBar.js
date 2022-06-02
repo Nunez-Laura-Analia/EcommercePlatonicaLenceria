@@ -19,7 +19,7 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const categories = ["colaless", "vedetinas", "culottes"]
+  const categories = ["Colaless", "Vedetinas", "Culottes"]
   
   return (
     <AppBar position="static" className="header-primary">
@@ -51,7 +51,7 @@ const NavBar = () => {
               variant="text"
               className="navbar__btn"
             >
-              Productos
+              <Link className="link" to="/product">Productos</Link>
             </Button>
             <Menu
               id="basic-menu"
