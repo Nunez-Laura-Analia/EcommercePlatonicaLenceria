@@ -1,10 +1,24 @@
-.contador{
+.containerCount{
     display: flex;
     justify-content: center;
 }
 
-.boton{
-    border-radius: 0.25rem;
-    margin: 5px;
-
+.count{
+    display: flex;
 }
+
+.btnCount{
+    color: rgb(238, 160, 173);
+    border: 1px solid rgb(238, 160, 173);
+    margin: 5px;
+}
+    
+
+.btnCount:hover{
+    color: white;
+    background-color: rgb(238, 160, 173);
+}
+
+
+    
+   

@@ -1,5 +1,7 @@
 .itemDetail{
     display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .imgContainer{
@@ -8,8 +10,7 @@
 
 .imgDetail{
     width: 95%;
-    height: 80%;
-    border-radius: 10px;
+    height: 1000px;
     margin-left: 15px;
 }
 
@@ -36,13 +37,13 @@ p {
 
 h4{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .talle{
     margin-top: 20px;
 }
-.colores{
+.colors{
     margin-top: 20px;
 
 }
@@ -56,13 +57,13 @@ h4{
     border: none;
     width: 200px;
     height: 45px;
-    background-color: rgb(241, 50, 241);
+    background-color: pink;
     transition: all 0.3s ease;
 }
 
 .selectorAdd:hover {
-    background: rgb(248, 129, 248);
-    border: 1px solid rgb(214, 121, 214);
+    background: rgb(238, 160, 173);
+    color: white;
     
 }
 
@@ -98,5 +99,6 @@ h4{
 }
 
 .info{
-    margin-top: 250px;
+    margin-top: 240px;
 }
+

@@ -1,4 +1,3 @@
-import './CartWidget.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Modal from "../Modal/Modal";
 import { useState } from 'react'
@@ -14,7 +13,7 @@ const CartWidget = () => {
         <div className="Carrito">
             <ShoppingCartIcon onClick={() =>setOpen(true)}/>
             <Modal handClose={handClose} open={open}>
-                <h1>carrito</h1>
+                <h1>Carrito</h1>
             </Modal>
         </div>
     )

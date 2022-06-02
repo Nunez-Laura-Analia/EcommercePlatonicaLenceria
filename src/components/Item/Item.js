@@ -1,15 +1,16 @@
 import "./Item.css";
-import { useState } from 'react'
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Modal from "../Modal/Modal";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
-const Item = ({image, title, price,stock, initial}) => {
+const Item = ({ image, title, price, stock, initial, id }) => {
   const [open, setOpen] = useState(false);
 
-  function onAdd (count) {
-    console.log ("Agregaste " + count + " productos al carrito")
+  function onAdd(count) {
+    console.log("Agregaste " + count + " productos al carrito");
   }
 
   const handClose = () => {
@@ -17,17 +18,24 @@ const Item = ({image, title, price,stock, initial}) => {
   };
 
   return (
-    <Card className="card-container" sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }} className="card-container">
       <CardContent>
         <div className="card">
           <div>
-            <img className="img-productos" src={`./${image}`} />
+            <img className="img-products" src={`/${image}`} />
           </div>
-          <h3>{title}</h3>
-          <span>${price}</span>
+          <div className="titlePrice">
+            <h3>{title}</h3>
+            <span>${price}</span>            
+          </div>
+
           <div>
-            <ItemCount stock= {stock} initial={initial} onAdd={onAdd}/>
-            <button className="boton" onClick={() => setOpen(true)}> Ver mas</button>
+            <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+            <div className="divDetail">
+              <button className="btnDetail">
+                <Link className="detail" to={"/producto/" + id}>Detalle</Link>
+              </button>              
+            </div>
           </div>
         </div>
       </CardContent>

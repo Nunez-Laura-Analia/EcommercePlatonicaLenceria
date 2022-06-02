@@ -1,42 +1,100 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const NavBar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container">
-        <a className="navbar-brand" href="#">PlatónicaLenceria</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbarName-toggler-icon"></span>
-        </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only"></span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Preguntas Frecuentes</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Productos
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Culottes</a>
-                <a className="dropdown-item" href="#">Vedetinas</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Colaless</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#">Contacto</a>
-            </li>
-          </ul>
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const categories = ["colaless", "vedetinas", "culottes"]
+  
+  return (
+    <AppBar position="static" className="header-primary">
+      <Toolbar className="tool">
+        <div className="container-logo">
+        <Link className="link" to="/"><img src="/platonica.png"/></Link>
+          
         </div>
-        <CartWidget />
-      </div>
-    </nav>
+        <ul className="navbar">
+          <li>
+            <Button
+              disableRipple
+              style={{ backgroundColor: "transparent" }}
+              variant="text"
+              className="navbar__btn"
+            >
+              <Link className="link" to="/">Inicio</Link>
+            </Button>
+          </li>
+          <li>
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined} 
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+              disableRipple
+              style={{ backgroundColor: "transparent" }}
+              variant="text"
+              className="navbar__btn"
+            >
+              Productos
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              {categories.map((cat) => {
+                return (
+                  <MenuItem onClick={handleClose}>
+                    <Link className="link" to={`/productos/${cat}`}>{cat}</Link>
+                  </MenuItem>
+                );
+              })}
+            </Menu>
+          </li>
+          <li>
+            <Button
+              disableRipple
+              style={{ backgroundColor: "transparent" }}
+              variant="text"
+              className="navbar__btn"
+            >
+              <Link className="link" to="/preguntasfrecuentes">Preguntas Frecuentes</Link>
+            </Button>
+          </li>
+          <li>
+            <Button
+              disableRipple
+              style={{ backgroundColor: "transparent" }}
+              variant="text"
+              className="navbar__btn"
+            >
+              <Link  className="link" to="/contacto">Contacto</Link>
+            </Button>
+          </li>
+        </ul>  
+      </Toolbar>
+      <CartWidget className="carrito" />
+    </AppBar>
   );
 };
 

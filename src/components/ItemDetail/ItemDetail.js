@@ -10,20 +10,19 @@ const ItemDetail = ({ data }) => {
     <>
       <div className="itemDetail">
         <div className="imgContainer">
-          <img className="imgDetail" src={data.image} />
+          <img className="imgDetail" src={`/${data.image}`} />
         </div>
         <div className="infoDetail">
           <h2>{data.title}</h2>
           <p>MATERIAL: {data.material} </p>
           <p>{data.materialAdicional}<DiamondIcon/></p>
           <h4>$ {data.price}</h4>
-          <p>{data.generalDescription}</p>
           <p className="talle">Talle disponible {data.talle}</p>
           <div>
             <button className="talleSelector">U</button>
           </div>
           <div>
-            <p className="colores">COLORES</p>
+            <p className="colors">COLORES</p>
           </div>
           <div className="color-group-selector">
             <button className="color-selector black"></button>
@@ -56,7 +55,7 @@ const ItemDetail = ({ data }) => {
           <div className="info">
             <p>COSTOS Y TIEMPOS DE ENTREGA</p>
             <p>CAMBIOS Y DEVOLUCIONES</p>
-            <p>CUIIDADOS DE LA PRENDA</p>
+            <p>CUIDADOS DE LA PRENDA</p>
           </div>
 
         </div>
