@@ -1,4 +1,4 @@
-import productos from "../components/ItemListContainer/ItemListContainer"
+import  productos from "../MockProducts/MockProducts"
 import ItemList from "../components/ItemList/ItemList"
 
 const Home = () => {

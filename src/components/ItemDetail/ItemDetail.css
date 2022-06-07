@@ -40,7 +40,7 @@ h4{
     margin-top: 10px;
 }
 
-.talle{
+.size{
     margin-top: 20px;
 }
 .colors{
@@ -67,7 +67,7 @@ h4{
     
 }
 
-.talleSelector{
+.sizeSelector{
     background: black;
     color: white;
     border-radius: 50%;
@@ -89,12 +89,12 @@ h4{
 
 .grey {background: rgb(173, 172, 172);}
 
-.redes{
+.network{
     display: flex;
     flex-direction: row;
 }
 
-.redesLogo{
+.networkLogo{
     margin-right: 10px;
 }
 

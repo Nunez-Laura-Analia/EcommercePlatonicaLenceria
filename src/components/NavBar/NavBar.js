@@ -25,7 +25,7 @@ const NavBar = () => {
     <AppBar position="static" className="header-primary">
       <Toolbar className="tool">
         <div className="container-logo">
-        <Link className="link" to="/"><img src="/platonica.png"/></Link>
+        <Link className="link" to="/"><img src="/platonica.png" alt="logo"/></Link>
           
         </div>
         <ul className="navbar">
@@ -93,7 +93,7 @@ const NavBar = () => {
           </li>
         </ul>  
       </Toolbar>
-      <CartWidget className="carrito" />
+      <CartWidget />
     </AppBar>
   );
 };

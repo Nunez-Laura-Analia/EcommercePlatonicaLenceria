@@ -1,5 +1,5 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
-import  productos  from '../ItemListContainer/ItemListContainer'
+import  productos from "../../MockProducts/MockProducts"
 import { useEffect, useState } from "react"
 import { useParams  } from "react-router-dom"
 

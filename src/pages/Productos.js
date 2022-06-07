@@ -1,5 +1,5 @@
-import productos from "../components/ItemListContainer/ItemListContainer"
 import ItemList from "../components/ItemList/ItemList"
+import productos from "../MockProducts/MockProducts"
 
 const Productos = () => {
     return(

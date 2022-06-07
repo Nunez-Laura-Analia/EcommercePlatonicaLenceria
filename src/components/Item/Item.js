@@ -3,15 +3,38 @@ import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Modal from "../Modal/Modal";
-import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
-const Item = ({ image, title, price, stock, initial, id }) => {
+
+const Item = ({ image, title, price, id }) => {
   const [open, setOpen] = useState(false);
+  const [loader, setLoader] = useState (false)
 
-  function onAdd(count) {
-    console.log("Agregaste " + count + " productos al carrito");
+
+  // getLoader(true)
+
+  // useEffect( () => {
+  //   getProducts()
+  //   .then( (res) => {
+  //     setProducts(res)
+  //   })
+  //   .catch ( (err) => {
+  //   })
+  //   .finally( () =>{
+  //     getLoader(false)
+  //   })
+  // }, [])
+  
+  
+  const cambiar = () => {
+    setLoader(true);
+    setTimeout(() => {
+      setLoader(false);
+    }, 5000)
   }
+
+  {loader && <Loader/>}
 
   const handClose = () => {
     setOpen(false);
@@ -22,7 +45,7 @@ const Item = ({ image, title, price, stock, initial, id }) => {
       <CardContent>
         <div className="card">
           <div>
-            <img className="img-products" src={`/${image}`} />
+            <img className="img-products" src={`/${image}`} alt="producto: bombachas"/>
           </div>
           <div className="titlePrice">
             <h3>{title}</h3>
@@ -30,9 +53,8 @@ const Item = ({ image, title, price, stock, initial, id }) => {
           </div>
 
           <div>
-            <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
             <div className="divDetail">
-              <button className="btnDetail">
+              <button className="btnDetail" onClick={() => cambiar ()}>
                 <Link className="detail" to={"/producto/" + id}>Detalle</Link>
               </button>              
             </div>
@@ -40,7 +62,7 @@ const Item = ({ image, title, price, stock, initial, id }) => {
         </div>
       </CardContent>
       <Modal handClose={handClose} open={open}>
-        <img className="img-productos" src={`./${image}`} />
+        <img className="img-productos" src={`./${image}`} alt="producto: bombachas"/>
         <div>
           <p>NOMBRE DEL PRODUCTO</p>
           <p>CARACTERISTICAS DEL PRODUCTO</p>
