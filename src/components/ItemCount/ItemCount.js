@@ -1,6 +1,6 @@
 import './ItemCount.css'
 
-const ItemCount = ({count, setCount, setShowButton, onAdd, stock, initial}) => {
+const ItemCount = ({count, setCount, onAdd, stock, initial}) => {
 
     const restCount= () => {
         if (count > initial)
@@ -19,7 +19,7 @@ const ItemCount = ({count, setCount, setShowButton, onAdd, stock, initial}) => {
                 <p>{count}</p>
                 <button className="btnCount" onClick={addCount}>+</button>
             </div>
-            <button className="btnCount" onClick={() => setShowButton(true)}>Agregar al Carrito</button>
+            <button className="btnCount" onClick={() => onAdd(count)}>Agregar al Carrito</button>
         </div>    
     )
 }

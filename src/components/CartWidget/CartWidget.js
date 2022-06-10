@@ -7,7 +7,7 @@ import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { cartListItems } = useContext(CartContext);
+  const { cartListItems, removeProduct } = useContext(CartContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -53,9 +53,12 @@ const CartWidget = () => {
                   <p>{data.title}</p>
                   <span> ${data.price}</span>
                 </div>
+                <div>
+                  <p>0</p>  
+                </div>
                 <div className="cart-prod__action">
                   <button className="btnDeleteIcon btn">
-                    <DeleteIcon />
+                    <DeleteIcon onClick={() => removeProduct(data.id)}/>
                   </button>
                 </div>
               </div>

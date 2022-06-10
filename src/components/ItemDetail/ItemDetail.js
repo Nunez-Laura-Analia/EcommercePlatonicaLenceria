@@ -16,6 +16,7 @@ const ItemDetail = ({ data }) => {
 
   function onAdd() {
     console.log("Agregaste " + count + " productos al carrito");
+    setShowButton(true)
   }
 
   return (
