@@ -24,15 +24,15 @@ const CartProvider = ({ children }) => {
     setCartListItem(newItemArray);
   };
 
-  const clearCart= () => {
-    console.log("se esta eliminando")
+  const cleanCart=  () => {
+    setCartListItem([])
   }
 
   const info = {
     cartListItems,
     addProductToCart,
     removeProduct,
-    clearCart,
+    cleanCart,
     totalPrice,
   };
   return <CartContext.Provider value={info}>{children}</CartContext.Provider>;

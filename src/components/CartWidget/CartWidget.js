@@ -7,7 +7,7 @@ import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { cartListItems, removeProduct, clearCart } = useContext(CartContext);
+  const { cartListItems, removeProduct, cleanCart } = useContext(CartContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -55,7 +55,7 @@ const CartWidget = () => {
                 <div className="item-cart-prod " key={data.id}>
                   <div className="cartWidget">
                     <div className="cart-prod__image">
-                      <img className="imgCartWidget" src={`/${data.image}`} />
+                      <img className="imgCartWidget" src={`/${data.image}`} alt=""/>
                     </div>
                     <div className="cart-prod__info">
                       <p>{data.title}</p>
@@ -78,10 +78,9 @@ const CartWidget = () => {
             <div className="cleanCart">
               <button
                 className="selectorAdd selector btnCart"
-                onClick={() => clearCart()}
+                onClick={cleanCart}
               >
-                {" "}
-                Limpiar Carrito
+                Vaciar Carrito
               </button>
               <button className="selectorAdd selector btnCart">
                 <Link className="linkCart" to="/cart">

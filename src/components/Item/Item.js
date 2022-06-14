@@ -6,35 +6,17 @@ import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
-
 const Item = ({ image, title, price, id }) => {
   const [open, setOpen] = useState(false);
-  const [loader, setLoader] = useState (false)
+  const [loader, setLoader] = useState(false);
 
-
-  // getLoader(true)
-
-  // useEffect( () => {
-  //   getProducts()
-  //   .then( (res) => {
-  //     setProducts(res)
-  //   })
-  //   .catch ( (err) => {
-  //   })
-  //   .finally( () =>{
-  //     getLoader(false)
-  //   })
-  // }, [])
-  
-  
-  const cambiar = () => {
-    setLoader(true);
+  const changeLoader = () => {
+    if (!loader ? <Loader/> : "");
+    setLoader(!loader);
     setTimeout(() => {
       setLoader(false);
-    }, 5000)
-  }
-
-  {loader && <Loader/>}
+    }, 2000);
+  };
 
   const handClose = () => {
     setOpen(false);
@@ -45,24 +27,34 @@ const Item = ({ image, title, price, id }) => {
       <CardContent>
         <div className="card">
           <div>
-            <img className="img-products" src={`/${image}`} alt="producto: bombachas"/>
+            <img
+              className="img-products"
+              src={`/${image}`}
+              alt="producto: bombachas"
+            />
           </div>
           <div className="titlePrice">
             <h3>{title}</h3>
-            <span>${price}</span>            
+            <span>${price}</span>
           </div>
 
           <div>
             <div className="divDetail">
-              <button className="btnDetail" onClick={() => cambiar ()}>
-                <Link className="detail" to={"/producto/" + id}>Detalle</Link>
-              </button>              
+              <button className="btnDetail" onClick={() => changeLoader()}>
+                <Link className="detail" to={"/producto/" + id} >
+                  Detalle
+                </Link>
+              </button>
             </div>
           </div>
         </div>
       </CardContent>
       <Modal handClose={handClose} open={open}>
-        <img className="img-productos" src={`./${image}`} alt="producto: bombachas"/>
+        <img
+          className="img-productos"
+          src={`./${image}`}
+          alt="producto: bombachas"
+        />
         <div>
           <p>NOMBRE DEL PRODUCTO</p>
           <p>CARACTERISTICAS DEL PRODUCTO</p>
