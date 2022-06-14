@@ -7,7 +7,7 @@ import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { cartListItems, removeProduct } = useContext(CartContext);
+  const { cartListItems, removeProduct, clearCart } = useContext(CartContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -38,32 +38,58 @@ const CartWidget = () => {
         <div className="container-item-list-cart">
           {cartListItems.length === 0 && (
             <>
-              <p>Aun no hay productos agregados</p>
-              <Link to="/productos">Empezar a comprar</Link>
+              <div className="divEmptyCart">
+                <p className="emptyCart">Aun no hay productos agregados</p>
+                <button className="selectorAdd selector">
+                  <Link className="linkCart" to="/product">
+                    Empezar a comprar
+                  </Link>
+                </button>
+              </div>
             </>
           )}
 
           {cartListItems.map((data) => {
             return (
-              <div className="item-cart-prod cartWidget" key={data.id}>
-                <div className="cart-prod__image">
-                  <img className="imgCartWidget" src={`/${data.image}`} />
+              <>
+                <div className="item-cart-prod " key={data.id}>
+                  <div className="cartWidget">
+                    <div className="cart-prod__image">
+                      <img className="imgCartWidget" src={`/${data.image}`} />
+                    </div>
+                    <div className="cart-prod__info">
+                      <p>{data.title}</p>
+                      <span> ${data.price}</span>
+                    </div>
+                    <div>
+                      <p>{}</p>
+                    </div>
+                    <div className="cart-prod__action">
+                      <button className="btnDeleteIcon btn">
+                        <DeleteIcon onClick={() => removeProduct(data)} />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="cart-prod__info">
-                  <p>{data.title}</p>
-                  <span> ${data.price}</span>
-                </div>
-                <div>
-                  <p>0</p>  
-                </div>
-                <div className="cart-prod__action">
-                  <button className="btnDeleteIcon btn">
-                    <DeleteIcon onClick={() => removeProduct(data.id)}/>
-                  </button>
-                </div>
-              </div>
+              </>
             );
           })}
+          {cartListItems.length !== 0 && (
+            <div className="cleanCart">
+              <button
+                className="selectorAdd selector btnCart"
+                onClick={() => clearCart()}
+              >
+                {" "}
+                Limpiar Carrito
+              </button>
+              <button className="selectorAdd selector btnCart">
+                <Link className="linkCart" to="/cart">
+                  Ver carrito
+                </Link>
+              </button>
+            </div>
+          )}
         </div>
       </Menu>
     </div>

@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Producto from "./pages/Producto";
 import Productos from "./pages/Productos";
 import { CartProvider } from './context/CartContext';
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/product" element={<Productos/>}/>
             <Route path="/producto/:id" element={<Detail/>}/>
             <Route path="/productos/:category" element={<Producto/>}/>
+            <Route path="/cart" element={<Cart/>}/>
             <Route path="/preguntasfrecuentes" element={<PreguntasFrecuentes/>}/>
             <Route path="/contacto" element={<Contacto/>}/>
             <Route path="*" element={<NotFound/>}/>

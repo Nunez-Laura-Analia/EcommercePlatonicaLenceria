@@ -10,11 +10,12 @@ import CartContext from "../../context/CartContext";
 
 
 const ItemDetail = ({ data }) => {
-  const [count, setCount] = useState (0)
+  
   const [showButton, setShowButton] = useState(false)
   const { addProductToCart } = useContext(CartContext)
 
-  function onAdd() {
+  function onAdd(count) {
+    addProductToCart({data, count})
     console.log("Agregaste " + count + " productos al carrito");
     setShowButton(true)
   }
@@ -53,9 +54,9 @@ const ItemDetail = ({ data }) => {
             </select>
             <input className="selector" type="number" value="1"></input>
             {!showButton ?
-            <ItemCount count= {count} setCount={setCount} stock={data.stock} setShowButton={setShowButton} onAdd={onAdd} initial={data.initial}/>
+            <ItemCount stock={data.stock} setShowButton={setShowButton} onAdd={onAdd} initial={data.initial}/>
             :
-            <button className="selectorAdd selector" onClick={() => addProductToCart({data})}> <Link to='/cart'>Terminar mi compra</Link></button>}
+            <button className="selectorAdd selector" onClick={() => onAdd()}> <Link to='/cart'>Terminar mi compra</Link></button>}
           </div>
           <p className="detailDescription">{data.description}</p>
           <p className="detailDescription">{data.generalDescription}</p>
