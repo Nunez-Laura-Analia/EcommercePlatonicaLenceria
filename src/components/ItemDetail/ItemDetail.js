@@ -8,7 +8,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import CartContext from "../../context/CartContext";
 
-
 const ItemDetail = ({ data }) => {
   
   const [showButton, setShowButton] = useState(false)

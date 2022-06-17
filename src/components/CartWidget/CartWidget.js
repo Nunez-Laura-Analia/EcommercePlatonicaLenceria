@@ -62,7 +62,7 @@ const CartWidget = () => {
                       <span> ${data.price}</span>
                     </div>
                     <div>
-                      <p>{}</p>
+                      <p>{data.count}</p>
                     </div>
                     <div className="cart-prod__action">
                       <button className="btnDeleteIcon btn">
