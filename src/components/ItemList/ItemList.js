@@ -1,26 +1,44 @@
 import Item from "../Item/Item";
 import { Grid } from "@mui/material";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../../utils/firebaseConfig";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const ItemList = ({ title, products }) => {
+const ItemList = ({ title }) => {
+  const [products, setProducts] = useState([]);
+  const { category } = useParams();
 
   useEffect(() => {
+    setProducts([]);
     getProducts()
-    .then ((productos) => {
-      console.log("productos", productos)
-    })
-  }, []);
+      .then((productos) => {
+        category ? filterFirebase() : setProducts(productos);
+      })
+      .catch((err) => {});
+  }, [category]);
 
   const getProducts = async () => {
-    const productSnapshot = await getDocs(collection(db, "productos"));
+    const productCollection = collection(db, "productos");
+    const productSnapshot = await getDocs(productCollection);
     const productList = productSnapshot.docs.map((doc) => {
-      let product = doc.data()
-      product.id = doc.id
-      return product
-    })
-    return productList
+      let product = doc.data();
+      product.id = doc.id;
+      return product;
+    });
+    return productList;
+  };
+
+  const filterFirebase = async () => {
+    const productRef = collection(db, "productos");
+    const queryResult = query(productRef, where("category", "==", category));
+    const querySnapshot = await getDocs(queryResult);
+    const productList = querySnapshot.docs.map((doc) => {
+      let product = doc.data();
+      product.id = doc.id;
+      return product;
+    });
+    return setProducts(productList);
   };
 
   return (
@@ -47,4 +65,3 @@ const ItemList = ({ title, products }) => {
 };
 
 export default ItemList;
- 

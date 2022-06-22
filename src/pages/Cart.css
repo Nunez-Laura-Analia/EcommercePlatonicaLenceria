@@ -35,3 +35,22 @@
 .cart-checkout-details{
     margin-top: 15px;
 }
+
+form.form-contact {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form.form-contact > div {
+    margin-bottom: 15px;
+  }
+  
+  form.form-contact button {
+    background: black;
+      border-radius: 40px;
+      text-transform: none;
+      color: white;
+      font-family: 'Lato';
+      padding: 10px 20px;
+      /* margin-top: 15px; */
+      font-size: 14px;cursor: pointer;}

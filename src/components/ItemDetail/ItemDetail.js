@@ -6,7 +6,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import DiamondIcon from '@mui/icons-material/Diamond';
-import CartContext from "../../context/CartContext";
+import CartContext from "../../context/CartContext"; 
 
 const ItemDetail = ({ data }) => {
   

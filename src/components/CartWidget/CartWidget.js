@@ -26,6 +26,7 @@ const CartWidget = () => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       />
+      <p style={{ color: "pink" }}>{cartListItems.length}</p>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -62,7 +63,7 @@ const CartWidget = () => {
                       <span> ${data.price}</span>
                     </div>
                     <div>
-                      <p>{data.count}</p>
+                      <p>{}</p>
                     </div>
                     <div className="cart-prod__action">
                       <button className="btnDeleteIcon btn">
