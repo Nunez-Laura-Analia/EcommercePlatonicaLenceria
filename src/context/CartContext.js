@@ -3,37 +3,38 @@ import { createContext, useState } from "react";
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  const [cartListItems, setCartListItems] = useState([]);
 
-  const [cartListItems, setCartListItems] = useState(JSON.parse(localStorage.getItem('products')) || [])
-  const [totalPrice, setTotalPrice] = useState (0)
-
-  const addProductToCart = ({ data, count}) => {
-    console.log('recibo ', count)
-    let isInCart = cartListItems.find((cartItem) => cartItem.id == data.id);
+  const addProductToCart = (data) => {
+    let isInCart = cartListItems.find((cartItem) => cartItem.data.id === data.data.id);
     if (!isInCart) {
-      setTotalPrice(totalPrice + data.price * count) 
-      localStorage.setItem('products', JSON.stringify([...cartListItems, data], ))
-      return setCartListItems(cartListItems => [...cartListItems, data])
+      return setCartListItems([...cartListItems, data]);
     }
   };
 
-  const removeProduct = ( data ) => {
-    const copyItem = [...cartListItems];
-    const newItemArray = copyItem.filter((cartItem) => cartItem.id !== data.id
-    );
-    setCartListItems(newItemArray);
+  const removeProduct = (data) => {
+    setCartListItems(cartListItems.filter((cartProduct) => cartProduct.data.id !== data.id));
   };
 
-  const cleanCart=  () => {
-    setCartListItems([])
-  }
+  const cleanCart = () => {
+    setCartListItems([]);
+  };
+
+  const totalQuantity = () => {
+    return cartListItems.reduce((quantity, data) => (quantity + data.count), 0);
+  };
+
+  const totalPrice = () => {
+    return cartListItems.reduce((prc, data) => (prc + data.data.price * data.count),0);
+  };
 
   const info = {
     cartListItems,
     addProductToCart,
     removeProduct,
     cleanCart,
-    totalPrice,
+    totalQuantity,
+    totalPrice
   };
   return <CartContext.Provider value={info}>{children}</CartContext.Provider>;
 };

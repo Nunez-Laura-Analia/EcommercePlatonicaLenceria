@@ -11,7 +11,7 @@ import db from "../utils/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartListItems, totalPrice, removeProduct, cleanCart } = useContext(CartContext);
+  const { cartListItems, totalPrice, removeProduct, cleanCart} = useContext(CartContext);
   const [showModal, setShowModal] = useState(false);
   const [success, setSuccess] = useState();
   const [formValue, setFormValue] = useState({
@@ -68,7 +68,7 @@ const Cart = () => {
           <h5>Quitar</h5>
         </div>
         {cartListItems.map((data) => {
-          const { id, title, image, price } = data;
+          const { id, title, image, price } = data.data;
           return (
             <div className="cart-table__content" key={id}>
               <div className="cart-table__content-img">
@@ -81,11 +81,11 @@ const Cart = () => {
                 <p>$ {price}</p>
               </div>
               <div className="cart-table__content-quantity">
-                <p>1</p>
+                <p>{data.count}</p>
               </div>
               <div className="cart-table__content-price">
                 <button className="btnDeleteIcon btn">
-                  <Delete onClick={() => removeProduct(data)} />
+                  <Delete onClick={() => removeProduct(id)} />
                 </button>
               </div>
             </div>
@@ -100,11 +100,11 @@ const Cart = () => {
           <div className="cart-checkout-details">
             <div className="cart-checkout__subtotal">
               <p>Subtotal</p>
-              <span>$ {totalPrice}</span>
+              <span>$ {totalPrice()}</span>
             </div>
             <div className="cart-checkout__total">
               <p>Total</p>
-              <span>$ {totalPrice}</span>
+              <span>$ {totalPrice()}</span>
             </div>
             <button className='selectorAdd selector cart' onClick={() => setShowModal(true)}>Completar Compra</button>
           </div>

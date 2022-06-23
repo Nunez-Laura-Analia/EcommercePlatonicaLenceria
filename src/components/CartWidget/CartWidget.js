@@ -7,7 +7,7 @@ import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { cartListItems, removeProduct, cleanCart } = useContext(CartContext);
+  const { cartListItems, removeProduct, cleanCart, totalQuantity } = useContext(CartContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -51,23 +51,24 @@ const CartWidget = () => {
           )}
 
           {cartListItems.map((data) => {
+            const { id, title, image, price } = data.data;
             return (
               <>
-                <div className="item-cart-prod " key={data.id}>
+                <div className="item-cart-prod " key={id}>
                   <div className="cartWidget">
                     <div className="cart-prod__image">
-                      <img className="imgCartWidget" src={`/${data.image}`} alt=""/>
+                      <img className="imgCartWidget" src={`/${image}`} alt=""/>
                     </div>
                     <div className="cart-prod__info">
-                      <p>{data.title}</p>
-                      <span> ${data.price}</span>
+                      <p>{title}</p>
+                      <span> ${price}</span>
                     </div>
                     <div>
-                      <p>{}</p>
+                      <p>{data.count}</p>
                     </div>
                     <div className="cart-prod__action">
                       <button className="btnDeleteIcon btn">
-                        <DeleteIcon onClick={() => removeProduct(data)} />
+                        <DeleteIcon onClick={() => removeProduct(data.data)} />
                       </button>
                     </div>
                   </div>
