@@ -1,0 +1,9 @@
+.bannerDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.imgBanner{
+    width: 33.3%;
+}

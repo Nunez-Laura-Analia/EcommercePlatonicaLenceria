@@ -85,7 +85,7 @@ const Cart = () => {
               </div>
               <div className="cart-table__content-price">
                 <button className="btnDeleteIcon btn">
-                  <Delete onClick={() => removeProduct(id)} />
+                  <Delete onClick={() => removeProduct(data.data)} />
                 </button>
               </div>
             </div>

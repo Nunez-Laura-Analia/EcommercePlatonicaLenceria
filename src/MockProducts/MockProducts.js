@@ -4,7 +4,7 @@ const productos = [
       material: "ALGODON Y LYCRA",
       materialAdicional: "Elástico lateral de lurex ",
       price: 1000,
-      image: "./colaless-glitter-regulables.jpeg",
+      image: "./conjunto.bralette.jpg",
       category: "Colaless",
       description: "Sus breteles regulables, la convierten en una prenda versatil y super adaptable al cuerpo.",
       generalDescription: "El precio corresponde a una docena, las cuales vienen surtidas y sin elección de colores.",

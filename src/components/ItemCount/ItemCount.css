@@ -5,12 +5,17 @@
 
 .count{
     display: flex;
+    align-items: center;
 }
 
 .btnCount{
-    color: rgb(238, 160, 173);
-    border: 1px solid rgb(238, 160, 173);
-    margin: 5px;
+    border: none;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(252, 220, 225);
+    margin-right: 5px;
+    margin-left: 5px;
+    transition: all 0.3s ease;
 }
     
 

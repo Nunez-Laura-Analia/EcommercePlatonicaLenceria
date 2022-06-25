@@ -54,20 +54,18 @@ const CartWidget = () => {
             const { id, title, image, price } = data.data;
             return (
               <>
-                <div className="item-cart-prod " key={id}>
+                <div key={id}>
                   <div className="cartWidget">
-                    <div className="cart-prod__image">
+                    <div>
                       <img className="imgCartWidget" src={`/${image}`} alt=""/>
                     </div>
-                    <div className="cart-prod__info">
+                    <div className="cartInfo">
                       <p>{title}</p>
-                      <span> ${price}</span>
+                      <p> ${price}</p>
+                      <p>Cantidad: {data.count}</p>
                     </div>
-                    <div>
-                      <p>{data.count}</p>
-                    </div>
-                    <div className="cart-prod__action">
-                      <button className="btnDeleteIcon btn">
+                    <div className="cartDelete">
+                      <button className="btnDelete">
                         <DeleteIcon onClick={() => removeProduct(data.data)} />
                       </button>
                     </div>

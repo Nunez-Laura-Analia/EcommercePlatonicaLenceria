@@ -1,0 +1,18 @@
+.footerContainer{
+    margin-top: 30px;
+}
+.divFooterTitle{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(252, 220, 225);
+    margin-bottom: 10px;
+}
+.divFooter{
+    display: flex;
+    justify-content: space-evenly;
+}
+.footerTitle{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}

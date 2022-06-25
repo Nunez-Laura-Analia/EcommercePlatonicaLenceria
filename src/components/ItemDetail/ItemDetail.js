@@ -46,16 +46,10 @@ const ItemDetail = ({ data }) => {
             <button className="color-selector grey"></button>
           </div>      
           <div className="selectorContainer">
-            <select className="selector">
-              <option>Cantidad</option>
-              <option>1/2 Docena</option>
-              <option>1 Docena</option>
-            </select>
-            <input className="selector" type="number" value="1"></input>
             {!showButton ?
             <ItemCount stock={data.stock} setShowButton={setShowButton} onAdd={onAdd} initial={data.initial}/>
             :
-            <button className="selectorAdd selector" onClick={() => onAdd()}> <Link to='/cart'>Terminar mi compra</Link></button>}
+            <button className="selectorAdd selector" onClick={() => onAdd()}> <Link className="linkAdd" to='/cart'>Terminar mi compra</Link></button>}
           </div>
           <p className="detailDescription">{data.description}</p>
           <p className="detailDescription">{data.generalDescription}</p>

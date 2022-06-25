@@ -10,7 +10,7 @@
 
 .imgDetail{
     width: 95%;
-    height: 1000px;
+    height: 1050px;
     margin-left: 15px;
 }
 
@@ -54,15 +54,26 @@ h4{
 }
 
 .selectorAdd {
+    margin-left: 10px;
     border: none;
     width: 200px;
     height: 45px;
-    background-color: pink;
+    background-color: rgb(252, 220, 225);
     transition: all 0.3s ease;
 }
 
 .selectorAdd:hover {
     background: rgb(238, 160, 173);
+    color: white;
+}
+
+.linkAdd{
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.linkAdd:hover{
     color: white;
 }
 

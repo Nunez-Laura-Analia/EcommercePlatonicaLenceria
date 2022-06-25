@@ -15,7 +15,7 @@
 
 .card:hover{
     transform: translateY(2px);
-    box-shadow: 0 12px 12px rgb(252, 199, 208);
+    box-shadow: 0 12px 12px rgb(252, 220, 225);
 }
 
 .titlePrice{
@@ -34,16 +34,20 @@
 .divDetail{
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .detail{
-    color: rgb(238, 160, 173);
+    color: black;
     text-decoration: none;
 }
 
 .btnDetail{
-    border: 1px solid rgb(238, 160, 173);  
+    border: none;  
+    background-color: rgb(252, 220, 225);
+    width: 150px;
+    height: 40px;
 }
 
 .detail:hover{

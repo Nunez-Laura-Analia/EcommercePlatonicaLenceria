@@ -5,7 +5,7 @@ import db from "../../utils/firebaseConfig";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const ItemList = ({ title }) => {
+const ItemList = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
 
@@ -43,12 +43,12 @@ const ItemList = ({ title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
+      <h2>PRODUCTOS</h2>
       <Grid container spacing={5}>
         {products.map(({ title, price, image, stock, id, initial }) => {
           return (
             <Grid item md={3} key={id}>
-              <Item
+              <Item 
                 title={title}
                 price={price}
                 image={image}
