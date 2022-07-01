@@ -1,0 +1,122 @@
+.col-cart-table__head {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.titleCart {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(252, 220, 225);
+  margin-top: 15px;
+}
+
+.col-cart-table__head h5 {
+  color: rgb(252, 220, 225);
+}
+
+.cart-table__content {
+  display: flex;
+  align-items: flex-end;
+}
+
+.cart {
+  width: 20%;
+  padding-bottom: 20px;
+}
+
+.tableCart {
+  display: flex;
+  justify-content: center;
+}
+
+.imgCart {
+  margin-right: 10px;
+  width: 75px;
+  height: 75px;
+}
+
+.priceCart {
+  margin-left: 30px;
+}
+
+.quantityCart {
+  margin-left: 80px;
+}
+
+.btnDeleteIcon {
+  border: none;
+  background-color: white;
+  margin-left: 70px;
+  margin-bottom: 15px;
+}
+
+.cart-table__content > div {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-checkout__subtotal {
+  margin-left: 15px;
+}
+
+.cart-checkout__total {
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.linkCart {
+  text-decoration: none;
+  color: black;
+}
+
+.linkCart:hover {
+  color: white;
+}
+
+/* formulario */
+
+form.form-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+form.form-contact > div {
+  margin-bottom: 15px;
+}
+
+.btnFormCart {
+  border: none;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(252, 220, 225);
+  transition: all 0.3s ease;
+}
+
+.btnFormCart:hover {
+  background: rgb(238, 160, 173);
+  color: white;
+}
+
+.purchaseForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.purchaseForm h6{
+  margin-bottom: 30px;
+}
+
+.purchaseForm h5{
+  margin-bottom: 20px;
+}

@@ -1,9 +1,13 @@
-import Item from "../Item/Item";
-import { Grid } from "@mui/material";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import db from "../../utils/firebaseConfig";
+//importacion react
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+//importacion firebase
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../../utils/firebaseConfig";
+//importacion archivos
+import Item from "../Item/Item";
+//importacion librerias
+import { Grid } from "@mui/material";
 
 const ItemList = () => {
   const [products, setProducts] = useState([]);
@@ -43,12 +47,11 @@ const ItemList = () => {
 
   return (
     <>
-      <h2>PRODUCTOS</h2>
       <Grid container spacing={5}>
         {products.map(({ title, price, image, stock, id, initial }) => {
           return (
             <Grid item md={3} key={id}>
-              <Item 
+              <Item
                 title={title}
                 price={price}
                 image={image}

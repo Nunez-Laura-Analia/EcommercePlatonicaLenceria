@@ -1,9 +1,13 @@
-// importacion css
+//importacion css
 import "./PreguntasFrecuentes.css";
 
 const PreguntasFrecuentes = () => {
   return (
     <div className="QuestionContainer">
+      <div>
+        
+      </div>
+      <h3 className="titleFAQ">PREGUNTAS FRECUENTES</h3>
       <div className="questionDiv">
         <h5 className="question">¿Cómo puedo realizar mi compra?</h5>
         <p className="answer">

@@ -1,114 +1,171 @@
-.itemDetail{
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.itemDetail {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.imgContainer{
-    width: 55%;
+.imgContainer {
+  width: 55%;
 }
 
-.imgDetail{
-    width: 95%;
-    height: 1050px;
-    margin-left: 15px;
+.imgDetail {
+  width: 95%;
+  height: 1050px;
+  margin-left: 15px;
 }
 
-.infoDetail{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
+.infoDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.selectorContainer{
-    display: flex;
-    margin-bottom: 50px;
+.selectorContainer {
+  display: flex;
+  margin-bottom: 50px;
 }
 
-h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-bottom: 20px;
+h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
 }
 
 p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-h4{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-top: 10px;
+h4 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 10px;
 }
 
-.size{
-    margin-top: 20px;
+.size {
+  margin-top: 20px;
 }
-.colors{
-    margin-top: 20px;
 
+.colors {
+  margin-top: 20px;
 }
-.selector{
-    margin-right: 20px;
-    width: 120px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.selector {
+  margin-right: 20px;
+  width: 120px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .selectorAdd {
-    margin-left: 10px;
-    border: none;
-    width: 200px;
-    height: 45px;
-    background-color: rgb(252, 220, 225);
-    transition: all 0.3s ease;
+  margin-left: 10px;
+  border: none;
+  width: 200px;
+  height: 45px;
+  background-color: rgb(252, 220, 225);
+  transition: all 0.3s ease;
 }
 
 .selectorAdd:hover {
-    background: rgb(238, 160, 173);
-    color: white;
+  background: rgb(238, 160, 173);
+  color: white;
 }
 
-.linkAdd{
-    text-decoration: none;
-    color: black;
-    transition: all 0.3s ease;
+.linkAdd {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
 }
 
-.linkAdd:hover{
-    color: white;
+.linkAdd:hover {
+  color: white;
 }
 
-.sizeSelector{
-    background: black;
-    color: white;
-    border-radius: 50%;
+.sizeSelector {
+  background: black;
+  color: white;
+  border-radius: 50%;
 }
 
-.color-group-selector {display: flex;margin-bottom: 30px;}
+.color-group-selector {
+  display: flex;
+  margin-bottom: 30px;
+}
 
-.color-selector {width: 30px;height: 30px;margin-right: 10px;cursor: pointer;border: none;border-radius: 50%;}
+.color-selector {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
 
-.black {background: black;}
+.black {
+  background: black;
+}
 
-.white {background: white; border: 1px solid black;}
+.white {
+  background: white;
+  border: 1px solid black;
+}
 
-.red {background: red;}
+.red {
+  background: red;
+}
 
-.pink {background: pink;}
+.pink {
+  background: pink;
+}
 
-.blue {background: rgb(6, 6, 90);}
+.blue {
+  background: rgb(6, 6, 90);
+}
 
-.grey {background: rgb(173, 172, 172);}
+.grey {
+  background: rgb(173, 172, 172);
+}
 
-.network{
+.network {
+  display: flex;
+  flex-direction: row;
+}
+
+.networkLogo {
+  margin-right: 10px;
+}
+
+.info {
+  margin-top: 240px;
+}
+
+/* media query */
+
+@media (max-width: 1024px) {
+  .itemDetail {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+  .infoDetail {
+    padding-left: 20px;
+  }
+
+  .imgContainer {
+    width: 90%;
+  }
 }
 
-.networkLogo{
-    margin-right: 10px;
+@media (max-width: 768px) {
+  .imgDetail {
+    height: 900px;
+  }
 }
 
-.info{
-    margin-top: 240px;
+@media (max-width: 425px) {
+  .imgDetail {
+    width: 95%;
+    height: 500px;
+    margin-left: 15px;
+  }
 }
-

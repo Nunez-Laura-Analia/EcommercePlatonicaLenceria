@@ -1,0 +1,25 @@
+.productsDiv {
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* media query */
+
+@media (max-width: 1024px) {
+  .imgBannerProducts {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .imgBannerProducts {
+    height: 200px;
+  }
+}
+
+@media (max-width: 425px) {
+  .imgBannerProducts {
+    height: 120px;
+  }
+}

@@ -1,39 +1,71 @@
-.cartWidget{
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    margin-top: 10px;
+.cartWidget {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-top: 10px;
 }
 
-.imgCartWidget{
-    width: 90px;
-    height: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
+.imgCartWidget {
+  width: 90px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
-.cartInfo{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+.cartInfo {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
 
-.cartDelete{
-    margin-top: 30px;
+.cartDelete {
+  margin-top: 30px;
 }
 
-.btnDelete{
-    border: none;
-    background-color: white;
+.btnDelete {
+  border: none;
+  background-color: white;
 }
 
-.cleanCart{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.cleanCart {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.btnCart{
-    margin-bottom: 5px;
+.btnCart {
+  margin-bottom: 5px;
+}
+
+.divEmptyCart {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.btnEmpty {
+  border: none;
+  width: 200px;
+  height: 45px;
+  margin-left: 25px;
+  background-color: rgb(252, 220, 225);
+  transition: all 0.3s ease;
+}
+
+.btnEmpty:hover {
+  background: rgb(238, 160, 173);
+  color: white;
+}
+
+.cartCount {
+  border-bottom: 1px solid pink;
+  color: pink;
+  margin-right: 15px;
+  padding: 0px 5px 0px 5px;
+  border-radius: 50%;
+  position: absolute;
+  line-height: 23px;
+  right: 0;
+  font-weight: bold;
 }

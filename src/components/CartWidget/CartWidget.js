@@ -1,13 +1,17 @@
+//importacion react
+import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+//importacion archivos
+import CartContext from "../../context/CartContext";
+// importacion css
 import "./CartWidget.css";
+//importacion librerias
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Menu from "@mui/material/Menu";
-import { useState, useContext } from "react";
-import CartContext from "../../context/CartContext";
-import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { cartListItems, removeProduct, cleanCart, totalQuantity } = useContext(CartContext);
+  const { cartListItems, removeProduct, cleanCart, totalPrice } = useContext(CartContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -20,13 +24,14 @@ const CartWidget = () => {
 
   return (
     <div className="cart-container-icon">
+      <p className="cartCount">{cartListItems.length}</p>
       <ShoppingCartIcon
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       />
-      <p style={{ color: "pink" }}>{cartListItems.length}</p>
+
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -41,7 +46,7 @@ const CartWidget = () => {
             <>
               <div className="divEmptyCart">
                 <p className="emptyCart">Aun no hay productos agregados</p>
-                <button className="selectorAdd selector">
+                <button className="btnEmpty">
                   <Link className="linkCart" to="/product">
                     Empezar a comprar
                   </Link>
@@ -57,7 +62,7 @@ const CartWidget = () => {
                 <div key={id}>
                   <div className="cartWidget">
                     <div>
-                      <img className="imgCartWidget" src={`/${image}`} alt=""/>
+                      <img className="imgCartWidget" src={`/${image}`} alt="" />
                     </div>
                     <div className="cartInfo">
                       <p>{title}</p>
@@ -76,6 +81,8 @@ const CartWidget = () => {
           })}
           {cartListItems.length !== 0 && (
             <div className="cleanCart">
+              <h5>Precio Final</h5>
+              <p>${totalPrice()}</p>
               <button
                 className="selectorAdd selector btnCart"
                 onClick={cleanCart}

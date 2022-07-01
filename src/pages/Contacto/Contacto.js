@@ -1,8 +1,7 @@
-// importacion css
+//importacion css
 import "./Contacto.css";
-// importacion formulario material
+//importacion librerias
 import TextField from "@mui/material/TextField";
-// importacion iconos
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
 import EmailIcon from "@mui/icons-material/Email";

@@ -1,29 +1,24 @@
-.containerCount{
-    display: flex;
-    justify-content: center;
+.containerCount {
+  display: flex;
+  justify-content: center;
 }
 
-.count{
-    display: flex;
-    align-items: center;
+.count {
+  display: flex;
+  align-items: center;
 }
 
-.btnCount{
-    border: none;
-    width: 45px;
-    height: 45px;
-    background-color: rgb(252, 220, 225);
-    margin-right: 5px;
-    margin-left: 5px;
-    transition: all 0.3s ease;
-}
-    
-
-.btnCount:hover{
-    color: white;
-    background-color: rgb(238, 160, 173);
+.btnCount {
+  border: none;
+  width: 45px;
+  height: 45px;
+  background-color: rgb(252, 220, 225);
+  margin-right: 5px;
+  margin-left: 5px;
+  transition: all 0.3s ease;
 }
 
-
-    
-   
+.btnCount:hover {
+  color: white;
+  background-color: rgb(238, 160, 173);
+}

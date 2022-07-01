@@ -1,0 +1,39 @@
+.titleFAQ {
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.QuestionContainer {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 25px;
+}
+
+.questionDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.question {
+  background-color: rgb(252, 220, 225);
+  width: 100%;
+}
+
+.answer {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* media query */
+
+@media (max-width: 1024px) {
+  .QuestionContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+}
