@@ -120,3 +120,9 @@ form.form-contact > div {
 .purchaseForm h5{
   margin-bottom: 20px;
 }
+
+.removeIconDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

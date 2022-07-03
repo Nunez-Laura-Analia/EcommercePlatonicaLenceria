@@ -1,14 +1,12 @@
 // importacion librerias
-import { Spinner } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box'; 
 
 const Loader = () => {
   return (
-    <div>
-      <Spinner>
-        <span>Cargando...</span>
-      </Spinner>
-    </div>
+    <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
   );
 };
 

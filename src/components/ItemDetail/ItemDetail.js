@@ -60,7 +60,6 @@ const ItemDetail = ({ data }) => {
                 stock={data.stock}
                 setShowButton={setShowButton}
                 onAdd={onAdd}
-                initial={data.initial}
               />
             ) : (
               <>

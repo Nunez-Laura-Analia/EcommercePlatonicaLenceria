@@ -1,6 +1,6 @@
 //importacion react
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate} from "react-router-dom";
 //importacion firebase
 import { doc, getDoc } from "firebase/firestore";
 import db from "../../utils/firebaseConfig";
@@ -11,10 +11,18 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
+  const navigate = useNavigate();
+
+  const notFound = () => {
+    navigate("*");
+  };
+
   useEffect(() => {
-    getProduct().then((prod) => {
+    getProduct()
+    .then((prod) => {
       setProduct(prod);
-    });
+    })
+    .catch((err) => {notFound()})
   }, [id]);
 
   const getProduct = async () => {

@@ -13,6 +13,7 @@ import "./Cart.css";
 import { Container } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import TextField from "@mui/material/TextField";
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 
 const Cart = () => {
   const { cartListItems, totalPrice, removeProduct, cleanCart } =
@@ -96,6 +97,21 @@ const Cart = () => {
             </div>
           );
         })}
+        {cartListItems.length === 0 && (
+          <>
+            <div className="removeIconDiv">
+              <div>
+                <p>Tu carrito se encuentra vacío.</p>
+              </div>
+              <div>
+                <p>Dirígite al incio para empezar a comprar.</p>
+              </div>
+              <div>
+                <RemoveShoppingCartIcon />
+              </div>
+            </div>
+          </>
+        )}
         <div className="cart-footer">
           <button className="selectorAdd selector">
             <Link className="linkCart" to="/product">
@@ -121,7 +137,9 @@ const Cart = () => {
         </div>
       </div>
       <Modal
-        title={success ? <h3>COMPRA EXITOSA</h3> : <h3>FORMULARIO DE CONTÁCTO</h3>}
+        title={
+          success ? <h3>COMPRA EXITOSA</h3> : <h3>FORMULARIO DE CONTÁCTO</h3>
+        }
         open={showModal}
         handleClose={() => setShowModal(false)}
       >

@@ -9,19 +9,8 @@ import Modal from "../Modal/Modal";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
-import Loader from "../Loader/Loader";
-
 const Item = ({ image, title, price, id }) => {
   const [open, setOpen] = useState(false);
-  const [loader, setLoader] = useState(false);
-
-  const changeLoader = () => {
-    if (!loader ? <Loader /> : "");
-    setLoader(!loader);
-    setTimeout(() => {
-      setLoader(false);
-    }, 2000);
-  };
 
   const handClose = () => {
     setOpen(false);
@@ -45,7 +34,7 @@ const Item = ({ image, title, price, id }) => {
             </div>
             <div>
               <div className="divDetail">
-                <button className="btnDetail" onClick={() => changeLoader()}>
+                <button className="btnDetail">
                   Detalle
                 </button>
               </div>
